@@ -45,8 +45,7 @@
       border-bottom: 1px solid var(--border); transition: all 0.3s ease;
     }
     nav.scrolled { background: rgba(3,7,18,0.95); box-shadow: 0 4px 40px rgba(139,92,246,0.15); }
-    .nav-logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--primary-light), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; cursor: none; transition: opacity 0.3s ease; }
-    .nav-logo:hover { opacity: 0.8; }
+    .nav-logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--primary-light), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.3s ease; position: relative; }
     .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--primary-light); transform: scaleX(0); transition: transform 0.3s ease; }
@@ -74,8 +73,7 @@
     .hero-card-inner { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 24px; padding: 2rem; position: relative; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(139,92,246,0.1); transform-style: preserve-3d; transition: transform 0.4s ease; }
     .hero-card-inner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-light), transparent); }
     .avatar-container { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--gold)); padding: 3px; margin: 0 auto 1rem; display: flex; align-items: center; }
-    .avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: linear-gradient(135deg, var(--primary-dark), #0a0f1e); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #fff; overflow: hidden; }
-    .avatar-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 50%; }
+    .avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: linear-gradient(135deg, var(--primary-dark), #0a0f1e); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #fff; }
     .card-name { text-align: center; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
     .card-role { text-align: center; font-size: 0.78rem; color: var(--primary-light); margin-bottom: 1.2rem; letter-spacing: 0.05em; }
     .card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
@@ -88,14 +86,6 @@
     .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 0.1em; animation: fadeUp 1s ease 1.5s both; }
     .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--primary), transparent); animation: scrollPulse 2s ease-in-out infinite; }
     @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
-    /* ===== SCROLL ANIMATIONS ===== */
-    .sa { opacity: 0; transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-    .sa.from-bottom { transform: translateY(55px); }
-    .sa.from-left   { transform: translateX(-55px); }
-    .sa.from-right  { transform: translateX(55px); }
-    .sa.from-scale  { transform: scale(0.87) translateY(22px); }
-    .sa.visible-in  { opacity: 1 !important; transform: none !important; }
-    .sa.visible-out { opacity: 0 !important; transform: translateY(-35px) !important; }
     section { padding: 6rem 4rem; position: relative; }
     .section-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary-light); margin-bottom: 1rem; }
     .section-label::before { content: ''; width: 30px; height: 1px; background: var(--primary-light); }
@@ -196,45 +186,6 @@
     .footer-brand { font-size: 1rem; font-weight: 700; background: linear-gradient(135deg, var(--primary-light), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    /* ===== CONTINUED BADGE ===== */
-    .exp-continued { font-size: 0.65rem; color: var(--text-dim); font-weight: 400; margin-left: 0.35rem; font-style: italic; opacity: 0.75; }
-    /* ===== CURRENT ROLE INDICATOR ===== */
-    .exp-date-current { display: inline-flex; align-items: center; gap: 0.4rem; }
-    .exp-date-current .exp-live-dot { width: 5px; height: 5px; border-radius: 50%; background: #22c55e; display: inline-block; animation: livePulse 1.8s ease-in-out infinite; flex-shrink: 0; }
-    /* ===== PROJECTS SECTION ===== */
-    #projects { background: var(--bg); }
-    .projects-container { max-width: 900px; margin: 0 auto; }
-    .projects-confidential { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
-    .projects-confidential::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-light), transparent); }
-    .projects-shield { font-size: 3rem; margin-bottom: 1.25rem; opacity: 0.9; }
-    .projects-title { font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
-    .projects-desc { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; max-width: 580px; margin: 0 auto 2rem; }
-    .projects-domains { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 2rem; }
-    .projects-domain-tag { padding: 0.3rem 0.9rem; border-radius: 50px; font-size: 0.75rem; background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2); color: var(--primary-light); font-weight: 500; }
-    .projects-notice { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1.4rem; border-radius: 12px; background: rgba(245,158,11,0.07); border: 1px solid rgba(245,158,11,0.25); font-size: 0.82rem; color: var(--gold); }
-    /* ===== DOWNLOAD CV BUTTON ===== */
-    .btn-download { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 2rem; border-radius: 50px; background: transparent; border: 1px solid rgba(139,92,246,0.4); color: var(--primary-light); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: none; }
-    .btn-download:hover { background: rgba(139,92,246,0.1); border-color: var(--primary-light); transform: translateY(-2px); }
-    /* ===== CONTACT FORM ===== */
-    .contact-form-section { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(139,92,246,0.12); text-align: left; }
-    .contact-form-heading { font-size: 1rem; font-weight: 600; color: var(--text-muted); margin-bottom: 1.25rem; text-align: center; letter-spacing: 0.03em; }
-    .contact-form { display: flex; flex-direction: column; gap: 0.9rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-group label { font-size: 0.75rem; font-weight: 500; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; }
-    .form-input, .form-textarea { background: rgba(255,255,255,0.04); border: 1px solid rgba(139,92,246,0.2); border-radius: 10px; padding: 0.75rem 1rem; color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.88rem; transition: border-color 0.3s ease, box-shadow 0.3s ease; outline: none; width: 100%; }
-    .form-input:focus, .form-textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.1); }
-    .form-textarea { resize: vertical; min-height: 110px; }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-dim); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
-    .btn-submit { align-self: center; padding: 0.75rem 2.2rem; border-radius: 50px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 20px var(--glow); font-family: 'Outfit', sans-serif; }
-    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 0 35px var(--glow); }
-    .form-status { text-align: center; font-size: 0.82rem; padding: 0.6rem 1rem; border-radius: 8px; display: none; }
-    .form-status.success { display: block; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); color: #4ade80; }
-    .form-status.error { display: block; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25); color: #f87171; }
-    /* ===== LINKEDIN LINK ===== */
-    .footer-linkedin { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s ease; }
-    .footer-linkedin:hover { color: var(--primary-light); }
-    .footer-linkedin svg { width: 14px; height: 14px; fill: currentColor; }
     @media(max-width: 900px) {
       nav { padding: 1rem 2rem; }
       .nav-links { display: none; }
@@ -243,7 +194,6 @@
       .hero-card { display: none; }
       .about-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -254,20 +204,16 @@
   <canvas id="bg-canvas"></canvas>
   <div class="wrapper">
     <nav id="navbar">
-      <a href="#hero" class="nav-logo">AN.</a>
+      <div class="nav-logo">AN.</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#tools">Tools</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div style="display:flex;gap:0.6rem;align-items:center;">
-        <a href="YOUR_CV_LINK_HERE" class="btn-download" download>⬇ Download CV</a>
-        <a href="#contact" class="nav-cta">Hire Me</a>
-      </div>
+      <a href="#contact" class="nav-cta">Hire Me</a>
     </nav>
 
     <section id="hero">
@@ -282,16 +228,13 @@
         <div class="hero-actions">
           <a href="#experience" class="btn-primary">View Experience</a>
           <a href="#contact" class="btn-secondary">Get in Touch</a>
-          <a href="YOUR_CV_LINK_HERE" class="btn-download" download>⬇ Download CV</a>
         </div>
       </div>
 
       <div class="hero-card" id="heroCard">
         <div class="hero-card-inner" id="heroCardInner">
           <div class="avatar-container">
-            <div class="avatar-inner">
-              <img src="alina_profile.jpg" alt="Alina Naeem" />
-            </div>
+            <div class="avatar-inner">AN</div>
           </div>
           <div class="card-name">Alina Naeem</div>
           <div class="card-role">ACCA Affiliate &middot; Oracle ERP Professional</div>
@@ -408,18 +351,9 @@
       <div class="exp-container">
         <div class="timeline">
           <div class="exp-item">
-            <div class="exp-dot">🔷</div>
-            <div class="exp-body">
-              <div class="exp-header"><span class="exp-role">Oracle ERP Lead / Developer</span><span class="exp-date exp-date-current"><span class="exp-live-dot"></span>Mar 2023 – Present</span></div>
-              <div class="exp-company">Eshal IT Solutions</div>
-              <div class="exp-desc">Led Oracle ERP development and customization projects using Oracle DB 10g through 23AI. Wrote complex PL/SQL procedures, developed Oracle Forms/Reports, and managed WebLogic deployments. Bridged accounting requirements with technical ERP implementation.</div>
-              <div class="exp-tags"><span class="exp-tag">Oracle 23AI</span><span class="exp-tag">PL/SQL</span><span class="exp-tag">Oracle Forms</span><span class="exp-tag">WebLogic</span><span class="exp-tag">ERP Lead</span></div>
-            </div>
-          </div>
-          <div class="exp-item">
             <div class="exp-dot">🏛️</div>
             <div class="exp-body">
-              <div class="exp-header"><span class="exp-role">Tax Auditor</span><span class="exp-date">Jan 2026 – Oct 2026 <span class="exp-continued">(continued)</span></span></div>
+              <div class="exp-header"><span class="exp-role">Tax Auditor</span><span class="exp-date">Jan 2026 – Present <span class="exp-live">&#x25CF; Ongoing</span></span></div>
               <div class="exp-company">Federal Board of Revenue (FBR), Pakistan</div>
               <div class="exp-desc">Conducted income tax and sales tax audits, managed IRIS portal for corporate and individual filer compliance. Reviewed financial statements for discrepancies and ensured regulatory adherence under Pakistani tax law.</div>
               <div class="exp-tags"><span class="exp-tag">FBR</span><span class="exp-tag">IRIS Portal</span><span class="exp-tag">Tax Audit</span><span class="exp-tag">Income Tax</span><span class="exp-tag">Sales Tax</span></div>
@@ -432,6 +366,15 @@
               <div class="exp-company">KBM Training &amp; Recruitment, UK</div>
               <div class="exp-desc">Delivered professional training programs for finance professionals targeting the UK job market. Covered Sage 50, Xero, QuickBooks, payroll software, UK tax compliance, and financial reporting under UK GAAP and IFRS standards.</div>
               <div class="exp-tags"><span class="exp-tag">Training</span><span class="exp-tag">UK GAAP</span><span class="exp-tag">Sage 50</span><span class="exp-tag">Xero</span><span class="exp-tag">IFRS</span><span class="exp-tag">Payroll</span></div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-dot">🔷</div>
+            <div class="exp-body">
+              <div class="exp-header"><span class="exp-role">Oracle ERP Lead / Developer</span><span class="exp-date">Mar 2023 – May 2025</span></div>
+              <div class="exp-company">Eshal IT Solutions</div>
+              <div class="exp-desc">Led Oracle ERP development and customization projects using Oracle DB 10g through 23AI. Wrote complex PL/SQL procedures, developed Oracle Forms/Reports, and managed WebLogic deployments. Bridged accounting requirements with technical ERP implementation.</div>
+              <div class="exp-tags"><span class="exp-tag">Oracle 23AI</span><span class="exp-tag">PL/SQL</span><span class="exp-tag">Oracle Forms</span><span class="exp-tag">WebLogic</span><span class="exp-tag">ERP Lead</span></div>
             </div>
           </div>
           <div class="exp-item">
@@ -483,37 +426,6 @@
           <div class="edu-school">Professional Development</div>
           <div class="edu-period">Certified</div>
           <div class="edu-note">Expertise in Power Query, Power Pivot, DAX formulas, interactive dashboards, and data visualization for financial reporting.</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="projects">
-      <div class="section-header reveal">
-        <div class="section-label">Selected Work</div>
-        <h2 class="section-title">Projects &amp; <span>Engagements</span></h2>
-        <p class="section-desc">Specialized work across finance, taxation, and enterprise technology — spanning multiple industries and jurisdictions.</p>
-      </div>
-      <div class="projects-container">
-        <div class="projects-confidential reveal">
-          <div class="projects-shield">🔒</div>
-          <div class="projects-title">Projects Under NDA / Confidential</div>
-          <div class="projects-desc">
-            A number of engagements across accounting, tax compliance, and Oracle ERP implementation have involved sensitive client data and proprietary systems. In accordance with professional obligations, detailed project information is not publicly disclosed.
-          </div>
-          <div class="projects-domains">
-            <span class="projects-domain-tag">Oracle ERP Implementation</span>
-            <span class="projects-domain-tag">Multi-Jurisdictional Tax Compliance</span>
-            <span class="projects-domain-tag">Financial Reporting &amp; Audit</span>
-            <span class="projects-domain-tag">Government Tax Systems (FBR)</span>
-            <span class="projects-domain-tag">UK &amp; US Tax Engagements</span>
-            <span class="projects-domain-tag">ERP Customization &amp; Data Migration</span>
-            <span class="projects-domain-tag">Power BI Dashboards</span>
-          </div>
-          <div class="projects-notice">
-            📋 Detailed presentations available upon request
-          </div>
         </div>
       </div>
     </section>
@@ -595,38 +507,8 @@
             <div class="contact-row"><span class="contact-row-icon">💼</span><span class="contact-row-label">Available</span><span class="contact-row-val">Immediately &middot; Remote &amp; On-site</span></div>
           </div>
           <div class="contact-cta">
-            <a href="mailto:alina.naeem.acca@gmail.com" class="btn-primary">&#128231; Send Email</a>
-            <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="cursor:none;">💬 WhatsApp</a>
-            <a href="https://linkedin.com/in/alina-naeem-acca" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="cursor:none;">
-              <svg style="width:0.85rem;height:0.85rem;fill:currentColor;vertical-align:middle;margin-right:0.3rem;" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn
-            </a>
-          </div>
-
-          <!-- Get in Touch Form -->
-          <div class="contact-form-section">
-            <div class="contact-form-heading">Send a Message</div>
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mvkzojqv" method="POST">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="cf-name">Name</label>
-                  <input type="text" id="cf-name" name="name" class="form-input" placeholder="Your name" required />
-                </div>
-                <div class="form-group">
-                  <label for="cf-email">Email</label>
-                  <input type="email" id="cf-email" name="email" class="form-input" placeholder="your@email.com" required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="cf-subject">Subject</label>
-                <input type="text" id="cf-subject" name="subject" class="form-input" placeholder="What is this about?" />
-              </div>
-              <div class="form-group">
-                <label for="cf-message">Message</label>
-                <textarea id="cf-message" name="message" class="form-textarea" placeholder="Write your message here…" required></textarea>
-              </div>
-              <button type="submit" class="btn-submit">Send Message →</button>
-              <div class="form-status" id="formStatus"></div>
-            </form>
+            <a href="mailto:alina@example.com" class="btn-primary">&#128231; Send Email</a>
+            <a href="tel:+923001234567" class="btn-secondary">&#128222; Call Me</a>
           </div>
         </div>
       </div>
@@ -634,13 +516,7 @@
 
     <footer>
       <p>&copy; 2025 Alina Naeem. All Rights Reserved.</p>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:0.35rem;">
-        <div class="footer-brand">AN.</div>
-        <a href="https://linkedin.com/in/alina-naeem-acca" target="_blank" rel="noopener noreferrer" class="footer-linkedin">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-      </div>
+      <div class="footer-brand">AN.</div>
       <p>Islamabad, Pakistan &#127477;&#127472;</p>
     </footer>
   </div>
@@ -803,88 +679,12 @@
       });
     }
 
-    // ===== BIDIRECTIONAL SCROLL ANIMATIONS =====
-    const saGroups = [
-      { sel: '.section-header', dir: 'from-bottom' },
-      { sel: '.about-text',     dir: 'from-left'   },
-      { sel: '.about-visual',   dir: 'from-right'  },
-      { sel: '.skill-category', dir: 'from-scale'  },
-      { sel: '.juris-card',     dir: 'from-bottom' },
-      { sel: '.exp-item',       dir: 'from-left'   },
-      { sel: '.edu-card',       dir: 'from-scale'  },
-      { sel: '.highlight-item', dir: 'from-bottom' },
-      { sel: '.contact-card',   dir: 'from-bottom' },
-      { sel: '.projects-confidential', dir: 'from-scale' },
-    ];
-    saGroups.forEach(({ sel, dir }) => {
-      document.querySelectorAll(sel).forEach((el, i) => {
-        el.classList.add('sa', dir);
-        el.style.transitionDelay = (i % 4 * 90) + 'ms';
-      });
-    });
-
-    let lastY = window.scrollY;
-    let dir = 'down';
-    window.addEventListener('scroll', () => {
-      dir = window.scrollY >= lastY ? 'down' : 'up';
-      lastY = window.scrollY;
-    }, { passive: true });
-
-    const saObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const el = entry.target;
-        if (entry.isIntersecting) {
-          el.classList.remove('visible-out');
-          el.classList.add('visible-in');
-        } else {
-          const aboveViewport = entry.boundingClientRect.top < 0;
-          if (aboveViewport && dir === 'up') {
-            // Element scrolled out the top — reverse it
-            el.classList.remove('visible-in');
-            el.classList.add('visible-out');
-          } else if (!aboveViewport) {
-            // Element is below viewport again (scrolled back up past it)
-            el.classList.remove('visible-in');
-            el.classList.remove('visible-out');
-          }
-        }
-      });
-    }, { threshold: 0.13, rootMargin: '0px 0px -30px 0px' });
-
-    document.querySelectorAll('.sa').forEach(el => saObs.observe(el));
-
-    // Formspree AJAX form submission
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('.btn-submit');
-        btn.textContent = 'Sending…';
-        btn.disabled = true;
-        try {
-          const res = await fetch(contactForm.action, {
-            method: 'POST',
-            body: new FormData(contactForm),
-            headers: { 'Accept': 'application/json' }
-          });
-          if (res.ok) {
-            formStatus.className = 'form-status success';
-            formStatus.textContent = "\u2713 Message sent! I'll get back to you soon.";
-            contactForm.reset();
-          } else {
-            const data = await res.json();
-            formStatus.className = 'form-status error';
-            formStatus.textContent = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
-          }
-        } catch {
-          formStatus.className = 'form-status error';
-          formStatus.textContent = 'Network error. Please try again.';
-        }
-        btn.textContent = 'Send Message →';
-        btn.disabled = false;
-      });
-    }
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal, .exp-item');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
   </script>
 </body>
 </html>
